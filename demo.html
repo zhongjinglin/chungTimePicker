@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>ChungTimePicker-demo</title>
+		<link rel="stylesheet" type="text/css" href="dist/css/chung-timepicker.css" />
+		<script src="dist/jQuery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="dist/js/chung-timepicker.js" type="text/javascript" charset="utf-8"></script>
+
+		<style type="text/css">
+			.myDiv {
+				width: 1200px;
+				min-height: 300px;
+				margin: 50px auto;
+				border: 1px solid gainsboro;
+				padding: 20px;
+			}
+			
+			.myDiv>div {
+				margin: 20px;
+			}
+			
+			.myDiv>div>span {
+				margin-right: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="myDiv">
+
+			<div>
+				<span>demo1，默认</span>
+				<input type="text" id="demo1" value="10:20" style="width: 50px;" />
+				<script type="text/javascript">
+					$('#demo1').chungTimePicker();
+				</script>
+			</div>
+
+			<div>
+				<span>demo2，在一个面板中操作</span>
+				<input type="text" id="demo2" value="22:45" style="width: 50px;" />
+				<script type="text/javascript">
+					$('#demo2').chungTimePicker({
+						viewType: 1
+					});
+				</script>
+			</div>
+
+			<div>
+				<span>demo3，默认操作的回调函数</span>
+				<input type="text" id="demo3" value="11:15" style="width: 50px;" />
+				<script type="text/javascript">
+					$('#demo3').chungTimePicker({
+						callback: function(e) {
+							alert('这是默认操作分钟选择完后的回调函数');
+						}
+					});
+				</script>
+			</div>
+
+			<div>
+				<span>demo4，取消按钮操作的回调函数</span>
+				<input type="text" id="demo4" value="08:10" style="width: 50px;" />
+				<script type="text/javascript">
+					$('#demo4').chungTimePicker({
+						viewType: 1,
+						cancelCallback: function(e) {
+							alert('这是取消按钮操作的回调函数');
+						}
+					});
+				</script>
+			</div>
+
+			<div>
+				<span>demo5，清除按钮操作的回调函数</span>
+				<input type="text" id="demo5" value="20:05" style="width: 50px;" />
+				<script type="text/javascript">
+					$('#demo5').chungTimePicker({
+						viewType: 1,
+						clearCallback: function(e) {
+							alert('这是清除按钮操作的回调函数');
+						}
+					});
+				</script>
+			</div>
+
+			<div>
+				<span>demo6，确定按钮操作的回调函数</span>
+				<input type="text" id="demo6" value="01:35" style="width: 50px;" />
+				<script type="text/javascript">
+					$('#demo6').chungTimePicker({
+						viewType: 1,
+						confirmCallback: function(e) {
+							alert('这是确定按钮操作的回调函数');
+						}
+					});
+				</script>
+			</div>
+
+		</div>
+	</body>
+
+</html>
